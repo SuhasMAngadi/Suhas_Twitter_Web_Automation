@@ -1,0 +1,53 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+
+public class TwitterBasic1 {
+	//Login
+	
+	 WebDriver driver;
+		
+		@BeforeTest
+		  public void beforeTest() {
+			driver=DriverUtil.getBroswerInstance("chrome");
+			  driver.manage().window().maximize();  
+			  driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		  }
+
+		  //@AfterTest
+		  //public void afterTest() {
+			  //driver.close();
+		  //}
+  @Test
+  public void TwitterLogin() {
+	  // to open twitter website
+	  driver.get("https://twitter.com");
+	  //click on sign in button
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[3]/div[5]/a/div/span/span")).click();
+	  
+	  //enter username
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[5]/label/div/div[2]/div/input")).sendKeys("sangadi09");
+	  
+	  //click next button
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[6]/div/span/span")).click();
+	  
+	  //enter password
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[3]/div/label/div/div[2]/div[1]/input")).sendKeys("Leavemealone@36");
+	  
+	  //press login button
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/span/span")).click();
+  }
+ 
+
+ 
+}
