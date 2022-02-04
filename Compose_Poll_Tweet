@@ -1,0 +1,46 @@
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class CreatePollTweet {
+	
+	 WebDriver driver;
+		
+		@BeforeTest
+		  public void beforeTest() {
+			driver=DriverUtil.getBroswerInstance("chrome");
+			  driver.manage().window().maximize();  
+			  driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		  }
+
+		  //@AfterTest
+		  //public void afterTest() {
+			  //driver.close();
+		  //}
+  @Test
+  public void CreatePollTweet() {
+	// to open twitter website and login
+	  driver.get("https://twitter.com");
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[3]/div[5]/a/div/span/span")).click();
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[5]/label/div/div[2]/div/input")).sendKeys("sangadi005");
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[6]/div/span/span")).click();
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[3]/div/label/div/div[2]/div[1]/input")).sendKeys("Leavemealone@36");
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/span/span")).click();
+//Create poll tweet section
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span")).click();
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[3]/div")).click();
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div/label/div/div[2]/div/input")).sendKeys("Choice A");
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/label/div/div[2]/div/input")).sendKeys("Choice B");
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div")).sendKeys("Poll Tweet Automation!!");
+	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]/div/span/span")).click();
+	
+	
+  }
+}
