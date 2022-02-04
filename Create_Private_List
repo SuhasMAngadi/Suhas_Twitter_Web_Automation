@@ -1,0 +1,66 @@
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class CreatePrivateList {
+	
+	 WebDriver driver;
+		
+		@BeforeTest
+		  public void beforeTest() {
+			driver=DriverUtil.getBroswerInstance("chrome");
+			  driver.manage().window().maximize();  
+			  driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		  }
+
+		  //@AfterTest
+		  //public void afterTest() {
+			  //driver.close();
+		  //}
+  @Test
+  public void CreatePrivateList() {
+	// to open twitter website and login
+		  driver.get("https://twitter.com");
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[3]/div[5]/a/div/span/span")).click();
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[5]/label/div/div[2]/div/input")).sendKeys("infanta011");
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[6]/div/span/span")).click();
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[3]/div/label/div/div[2]/div[1]/input")).sendKeys("hello67890");
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/span/span")).click();
+		  
+		  //To create a new Private list
+		  
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[6]/div")).click();
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div[3]/div/a/div")).click();
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input")).sendKeys("AutomationListPrivate");
+		  //Make private checkmark
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/div/div/label/div/div[2]/input")).click();
+		  //Next button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div")).click(); 
+		  
+		  /*delay is introduced here because, if you notice xpath for
+		   both 'next' and 'done' button is same, not introducing the delay
+		   is causing the execution to stop at next button itself, looks like
+		   the system is confused between the xpaths and may be pressing the
+		   'next' button itself twice rather than pressing 'next' first 
+		   followed by 'done' button */
+		   
+		  try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  
+		  //Done button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div")).click(); 
+		
+		
+  }
+}
