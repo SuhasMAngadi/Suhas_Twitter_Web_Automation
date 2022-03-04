@@ -1,3 +1,61 @@
+//Code implemented using hierarchical inheritance
+
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class CreatePrivateList extends DriverUtilityLoginClass{
+	
+	public static void main (String[] args) {
+		CreatePrivateList cp = new CreatePrivateList();
+		cp.beforeTest();
+		cp.loginUtility();
+		cp.CreateprivateList();
+	}
+  @Test
+  public void CreateprivateList() {
+	
+		  //To create a new Private list
+		  
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[6]/div")).click();
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div[3]/div/a/div")).click();
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input")).sendKeys("AutomationListPrivate1");
+		  //Make private checkmark
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/div/div/label/div/div[2]/input")).click();
+		  //Next button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div")).click(); 
+		  
+		  /*delay is introduced here because, if you notice xpath for
+		   both 'next' and 'done' button is same, not introducing the delay
+		   is causing the execution to stop at next button itself, looks like
+		   the system is confused between the xpaths and may be pressing the
+		   'next' button itself twice rather than pressing 'next' first 
+		   followed by 'done' button */
+		   
+		  try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  
+		  //Done button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div")).click(); 
+		
+		
+  }
+}
+
+-----------------------------------------------------------------------------
+//Direct code implemented initially
+
 package tests;
 
 import java.util.concurrent.TimeUnit;
