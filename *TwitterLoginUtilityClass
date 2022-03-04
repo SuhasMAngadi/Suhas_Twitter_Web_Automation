@@ -1,5 +1,5 @@
 
-/*created a base class containing 'Login to twitter' code and extend all the subsequent scripts as child class rather than including login code 
+/* Created a base class containing 'Login to twitter' code and extend all the subsequent scripts as child class rather than including login code 
 in every individual script, so that in future if the login UI changes, user will only have to edit the 'Login to twitter' code in base class and the 
 change will reflect in all other scripts, thereby avoiding a situation where user will have to edit login code in all the scripts individually */
 
