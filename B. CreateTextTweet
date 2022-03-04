@@ -1,3 +1,47 @@
+//Code implemented using Hierarchical inheritance
+
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class CreateTweet extends DriverUtilityLoginClass {
+	
+	 
+	public static void main (String[] args) {
+		CreateTweet c = new CreateTweet();
+		c.beforeTest();
+		c.loginUtility(); 
+		c.Createtweet();
+	}
+		 	
+  @Test
+public void Createtweet() {
+	
+	//Create tweet section
+	driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span")).click();
+	driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div")).sendKeys("Suhas loves Automation!!");
+	try {
+		Thread.sleep(2000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]/div/span/span")).click();  
+  }
+}
+
+
+
+--------------------------------------------------------------------------------------
+//Direct code implemented initially
+
 package tests;
 
 import java.util.concurrent.TimeUnit;
