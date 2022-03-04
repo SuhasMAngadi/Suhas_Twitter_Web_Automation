@@ -4,7 +4,7 @@
 in every individual script, so that in future if the login UI changes, user will only have to edit the 'Login to twitter' code in base class and the 
 change will reflect in all other scripts, thereby avoiding a situation where user will have to edit login code in all the scripts individually */
 
-//Implemented this idea using Hierarchical inheritance
+//Implemented this idea using Hierarchical inheritance, the following code shall act like a base class
 
 
 package tests;
