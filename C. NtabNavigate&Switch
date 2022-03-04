@@ -1,3 +1,35 @@
+//Code implemented using Hierarchical inheritance
+
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class NtabNavigateSwitch extends DriverUtilityLoginClass {
+	public static void main (String[] args) {
+		NtabNavigateSwitch n = new NtabNavigateSwitch();
+		n.beforeTest();
+		n.loginUtility();
+		n.NtabNavigate();
+	}
+  @Test
+  public void NtabNavigate() {
+	
+	//Navigate to Ntab and switch between all and mentions tab
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[3]/div/div[2]/span")).click(); 
+	  driver.findElement(By.cssSelector("a[href='/notifications/mentions']")).click();
+  }
+}
+
+------------------------------------------------------------------------------------
+//Direct code implemented initially
+
 package tests;
 
 import java.util.concurrent.TimeUnit;
