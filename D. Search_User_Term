@@ -1,3 +1,38 @@
+//Code implemented using Hierarchical inheritance
+
+package tests;
+
+import java.awt.RenderingHints.Key;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.openqa.selenium.Keys;
+
+import util.DriverUtil;
+
+public class SearchUser extends DriverUtilityLoginClass {
+	public static void main (String[] args) {
+		SearchUser s = new SearchUser();
+		s.beforeTest();
+		s.loginUtility();
+		s.Searchuser();
+	}
+  @Test
+  public void Searchuser() {
+	
+	  //to search any user or term from explore tab
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[2]/div")).click();
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/form/div[1]/div/div/label/div[2]/div/input")).sendKeys("Food");
+	  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/form/div[1]/div/div/label/div[2]/div/input")).sendKeys(Keys.ENTER);
+  }
+}
+
+--------------------------------------------------------------------------------------------
+//Direct code implemented initially
+
 package tests;
 
 import java.awt.RenderingHints.Key;
