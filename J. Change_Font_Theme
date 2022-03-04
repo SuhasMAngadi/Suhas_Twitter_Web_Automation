@@ -1,3 +1,41 @@
+//Code implemented using hierarchical inheritance
+
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class Change_Font_Theme extends DriverUtilityLoginClass {
+	
+	 public static void main (String[] args) {
+		 Change_Font_Theme ch = new Change_Font_Theme();
+		 ch.beforeTest();
+		 ch.loginUtility();
+		 ch.ChangefontTheme();
+	 }
+  @Test
+  public void ChangefontTheme() {
+	
+   //To change font and theme
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/div/div/div[2]/span")).click();	
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div[2]/div[3]/div/div/div/div[11]/a/div")).click();
+		//change font size to small from default
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div[5]/div")).click();
+		//change theme 
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[8]/div/div/div[1]/input")).click();
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[9]/div")).click();	  
+  }
+}
+
+---------------------------------------------------------------------------------
+//Direct code implemented initially
+
 package tests;
 
 import java.util.concurrent.TimeUnit;
