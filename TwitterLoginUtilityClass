@@ -1,8 +1,54 @@
 
 
-/* Planning to create a base class containing 'Login to twitter' code and extend all the subsequent scripts as child class rather than including login code 
+/*created a base class containing 'Login to twitter' code and extend all the subsequent scripts as child class rather than including login code 
 in every individual script, so that in future if the login UI changes, user will only have to edit the 'Login to twitter' code in base class and the 
 change will reflect in all other scripts, thereby avoiding a situation where user will have to edit login code in all the scripts individually */
+
+//Implemented this idea using Hierarchical inheritance
+
+
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import util.DriverUtil;
+
+public class DriverUtilityLoginClass {
+	WebDriver driver;
+	
+	@BeforeTest
+	  public void beforeTest() {
+		driver=DriverUtil.getBroswerInstance("chrome");
+		  driver.manage().window().maximize();  
+		  driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+	  }
+
+  @Test
+  public void loginUtility() {
+	// to open twitter website
+		  driver.get("https://twitter.com");
+		  //click on sign in button
+		  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[3]/div[5]/a/div/span/span")).click();
+		  
+		  //enter username
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[5]/label/div/div[2]/div/input")).sendKeys("sangadi09");
+		  
+		  //click next button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[6]")).click();
+		  
+		  //enter password
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input")).sendKeys("Leavemealone@36");
+		  
+		  //press login button
+		  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/span/span")).click();
+  }
+}
+
 
 
 
