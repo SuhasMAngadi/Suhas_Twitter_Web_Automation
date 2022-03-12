@@ -1,19 +1,21 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.Test;
+
+import Locators.CreateTextTweetLocators;
 
 public class CreateTextTweet extends UtilityClass {
 	public static void main (String[] args) {
 		CreateTextTweet c = new CreateTextTweet();
 		c.beforeTest();
-		c.loginUtility("sangadi04", "Leavemealone@36"); 
-		c.CreateTweet();
+		c.loginUtility("sangadi04", "Leavemealone@36");
+		
+		//Create text tweet section
+		
+		CreateTextTweetLocators.ClickTweetButton(driver).click();
+		CreateTextTweetLocators.TypeTweetText(driver).sendKeys("New Automation tweet1");
+		CreateTextTweetLocators.TweetButtonClick(driver).click();
 	}
-    public void CreateTweet() {
-    	
-    	super.Tweetclick();
-    	super.TypeTweetText("passing text for the tweet");
-    	super.TweetOut();
-    }
 }
