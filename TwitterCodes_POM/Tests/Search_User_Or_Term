@@ -1,0 +1,21 @@
+package tests;
+
+import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
+
+import Locators.SearchUserOrTermLocators;
+
+public class SearchUserOrTerm extends UtilityClass{
+	public static void main (String[] args) {
+		SearchUserOrTerm s = new SearchUserOrTerm();
+		s.beforeTest();
+		s.loginUtility("5Sangadi","Leavemealone@36");
+		
+		//Search for any user or a term
+		
+		SearchUserOrTermLocators.ExploreTabClick(driver).click();
+		SearchUserOrTermLocators.EnterNameOrTerm(driver).sendKeys("food");
+		SearchUserOrTermLocators.ClickEnterButton(driver).sendKeys(Keys.ENTER);
+	}
+	
+}
