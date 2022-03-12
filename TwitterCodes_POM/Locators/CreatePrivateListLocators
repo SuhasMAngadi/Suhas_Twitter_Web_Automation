@@ -1,0 +1,39 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class CreatePrivateListLocators {
+static WebElement element = null;
+	
+	public static WebElement ListsTab(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[6]/div"));
+		return element;
+	}
+	
+	public static WebElement NewListButtonTap(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[1]/div[1]/div/div/div/div/div[3]/div/a/div"));
+		return element;
+	}
+	
+	public static WebElement EnterListName(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input"));
+		return element;
+	}
+	
+	public static WebElement PrivateListCheckmark(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/div/div/label/div/div[2]/input"));
+		return element;
+	}
+
+	public static WebElement NextButtonClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div"));
+		return element;
+	}
+	//please introduce delay here
+	public static WebElement DoneButtonClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div"));
+		return element;
+	}
+}
