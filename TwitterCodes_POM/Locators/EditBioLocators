@@ -1,0 +1,36 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class EditBioLocators {
+	
+	static WebElement element = null;  
+	
+	public static WebElement ProfileClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[7]/div"));
+		return element;
+	}
+	
+	public static WebElement EditProfileClick(WebDriver driver) {
+		element = driver.findElement(By.cssSelector("a[href='/settings/profile']"));
+		return element;
+	}
+	
+	public static WebElement ClearBioContent(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/label/div/div[2]/div/textarea"));
+		return element;
+	}
+	
+	public static WebElement UpdateNewBio(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/label/div/div[2]/div/textarea"));
+		return element;
+	}
+	
+	public static WebElement SaveButtonClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div"));
+		return element;
+	}
+
+}
