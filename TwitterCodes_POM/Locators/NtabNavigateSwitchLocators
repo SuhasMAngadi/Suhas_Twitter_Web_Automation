@@ -1,0 +1,24 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class NtabNavigateSwitchLocators {
+	
+	static WebElement element = null; 
+	//should be defined as static to use in all methods below
+	// 'element' is of type WebElement whose value is assigned to null
+			
+	
+	public static WebElement NtabClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[3]/div/div[2]/span"));
+		return element;	
+	}
+	
+	public static WebElement NtabMentionsSwitch(WebDriver driver) {
+		element = driver.findElement(By.cssSelector("a[href='/notifications/mentions']"));
+		return element;
+	}
+	
+}
