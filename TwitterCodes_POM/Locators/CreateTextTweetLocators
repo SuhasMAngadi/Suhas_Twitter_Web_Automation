@@ -1,0 +1,28 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class CreateTextTweetLocators {
+static WebElement element = null;  
+	
+	//should be defined as static to use in all methods below
+	// 'element' is of type WebElement whose value is assigned to null
+	
+	public static WebElement ClickTweetButton(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span"));
+		return element;		//return type of this method will be of type WebElement
+	}
+	
+	public static WebElement TypeTweetText(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div"));
+		return element;
+	}
+
+	public static WebElement TweetButtonClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]/div/span/span"));
+		return element;
+	}
+
+}
