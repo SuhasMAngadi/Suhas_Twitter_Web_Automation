@@ -1,0 +1,17 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.NtabNavigateSwitchLocators;
+public class NtabNavigateSwitch extends UtilityClass {
+	public static void main (String[] args) {
+		NtabNavigateSwitch n = new NtabNavigateSwitch();
+		n.beforeTest();
+		n.loginUtility("5Sangadi","Leavemealone@36");
+		
+		//Navigate to Ntab and Switch
+		
+		NtabNavigateSwitchLocators.NtabClick(driver).click();
+		NtabNavigateSwitchLocators.NtabMentionsSwitch(driver).click();
+	}
+}
