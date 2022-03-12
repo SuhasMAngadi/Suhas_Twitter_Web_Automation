@@ -1,0 +1,23 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.EditBioLocators;
+
+public class EditBio extends UtilityClass {
+	
+	public static void main (String[] args) {
+		EditBio eb = new EditBio();
+		eb.beforeTest();
+		eb.loginUtility("Sangadi005","Leavemealone@36");
+		
+		//Edit profile bio
+		
+		EditBioLocators.ProfileClick(driver).click();
+		EditBioLocators.EditProfileClick(driver).click();
+		EditBioLocators.ClearBioContent(driver).clear();
+		EditBioLocators.UpdateNewBio(driver).sendKeys("New Bio updated via Automation!!!");
+		EditBioLocators.SaveButtonClick(driver).click();
+	}
+ 
+}
