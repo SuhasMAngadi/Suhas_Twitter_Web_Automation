@@ -1,0 +1,19 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class CreateTextTweet extends UtilityClass {
+	public static void main (String[] args) {
+		CreateTextTweet c = new CreateTextTweet();
+		c.beforeTest();
+		c.loginUtility("sangadi04", "Leavemealone@36"); 
+		c.CreateTweet();
+	}
+    public void CreateTweet() {
+    	
+    	super.Tweetclick();
+    	super.TypeTweetText("passing text for the tweet");
+    	super.TweetOut();
+    }
+}
