@@ -10,8 +10,7 @@ import org.testng.annotations.Test;
 import util.DriverUtil;
 
 public class UtilityClass {
-WebDriver driver;
-	
+	static WebDriver driver = null;
 	@BeforeTest
 	  public void beforeTest() {
 		driver=DriverUtil.getBroswerInstance("chrome");
@@ -37,20 +36,7 @@ WebDriver driver;
 			  //press login button
 			  driver.findElement(By.xpath("//*[@id=\"layers\"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/span/span")).click();	  
 		  }
-  public void Tweetclick() {
-		//Click on tweet button
-		driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span")).click();
-  }
-  
-  public void TypeTweetText(String s) {
-	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div")).sendKeys(s);
-  }
-  
-  public void TweetOut() {
-	  driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]/div/span/span")).click();  
-  }
 		
 }
-
 
 
