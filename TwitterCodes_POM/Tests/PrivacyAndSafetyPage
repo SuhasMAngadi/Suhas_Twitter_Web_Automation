@@ -1,0 +1,20 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.PrivacyAndSafetyPageLocators;
+
+public class PrivacyAndSafetyPage extends UtilityClass {
+	public static void main (String[] args) {
+		PrivacyAndSafetyPage p = new PrivacyAndSafetyPage();
+		p.beforeTest();
+		p.loginUtility("5Sangadi","Leavemealone@36");
+		
+		//Privacy and Safety Page
+		
+		PrivacyAndSafetyPageLocators.moreOptions(driver).click();
+		PrivacyAndSafetyPageLocators.SettingsClick(driver).click();
+		PrivacyAndSafetyPageLocators.PrivacyAndSafetyClick(driver).click();
+		
+	}
+}
