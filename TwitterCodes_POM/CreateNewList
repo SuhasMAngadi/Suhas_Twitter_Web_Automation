@@ -1,0 +1,36 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.CreateNewListLocators;
+
+public class CreateNewList extends UtilityClass{
+	public static void main (String[] args) {
+		CreateNewList cc = new CreateNewList();
+		cc.beforeTest();
+		cc.loginUtility("Sangadi04","Leavemealone@36");
+		
+		//Create new public list
+		
+		CreateNewListLocators.ListsTab(driver).click();
+		CreateNewListLocators.NewListButtonTap(driver).click();
+		CreateNewListLocators.EnterListName(driver).sendKeys("Automation List 1");
+		CreateNewListLocators.NextButtonClick(driver).click();
+		//Important
+		  /*delay is introduced here because, if you notice xpath for
+		   both 'next' and 'done' button is same, not introducing the delay
+		   is causing the execution to stop at next button itself, looks like
+		   the system is confused between the xpaths and may be pressing the
+		   'next' button itself twice rather than pressing 'next' first 
+		   followed by 'done' button */
+		   
+		  try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CreateNewListLocators.DoneButtonClick(driver).click();
+		
+	}
+}
