@@ -1,0 +1,28 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+
+public class PrivacyAndSafetyPageLocators {
+	
+	static WebElement element = null;
+	
+	public static WebElement moreOptions(WebDriver driver) {
+		element =  driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/div/div/div[2]/span"));
+		return element;
+	}
+	
+	public static WebElement SettingsClick(WebDriver driver) {
+		element = driver.findElement(By.cssSelector("a[href='/settings']"));
+		return element;
+	}
+
+	public static WebElement PrivacyAndSafetyClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/section[1]/div[2]/div/div[4]/a/div/div/div/span"));
+		return element;
+		
+	}
+	
+}
+
