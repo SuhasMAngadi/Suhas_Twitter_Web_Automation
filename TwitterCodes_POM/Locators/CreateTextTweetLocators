@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CreateTextTweetLocators {
-static WebElement element = null;  
+
+	static WebElement element = null;  
 	
 	//should be defined as static to use in all methods below
 	// 'element' is of type WebElement whose value is assigned to null
