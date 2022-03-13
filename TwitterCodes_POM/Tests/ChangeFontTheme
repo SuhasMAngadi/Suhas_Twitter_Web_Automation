@@ -1,0 +1,29 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.ChangeFontThemeLocators;
+
+public class ChangeFontTheme extends UtilityClass {
+	
+	public static void main (String[] args) {
+		 ChangeFontTheme ch = new ChangeFontTheme();
+		 ch.beforeTest();
+		 ch.loginUtility("Sangadi09","Leavemealone@36");
+		 
+		 ChangeFontThemeLocators.MoreOptionsClick(driver).click();
+		 ChangeFontThemeLocators.DisplayOptionClick(driver).click();
+		 
+		 //change font size to small from default
+		 
+		 ChangeFontThemeLocators.SmallFontSizeClick(driver).click();
+		 
+		 //change Theme
+		 
+		 ChangeFontThemeLocators.DefaultThemeClick(driver).click();
+		 ChangeFontThemeLocators.DoneButtonClick(driver).click();
+		 
+		 
+	 }
+  
+}
