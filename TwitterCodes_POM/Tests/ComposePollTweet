@@ -1,0 +1,23 @@
+package tests;
+
+import org.testng.annotations.Test;
+
+import Locators.ComposePollTweetLocators;
+
+public class ComposePollTweet extends UtilityClass{
+	public static void main (String[] args) {
+		ComposePollTweet poll = new ComposePollTweet();
+		poll.beforeTest();
+		poll.loginUtility("sangadi04","Leavemealone@36");
+		
+		//Compose a poll tweet
+		
+		ComposePollTweetLocators.CreateTweetButton(driver).click();
+		ComposePollTweetLocators.ClickPollOption(driver).click();
+		ComposePollTweetLocators.FirstPollChoiceEnter(driver).sendKeys("Choice A");
+		ComposePollTweetLocators.SecondPollChoiceEnter(driver).sendKeys("Choice B");
+		ComposePollTweetLocators.TweetTextEnter(driver).sendKeys("Poll Tweet Automation 1");
+		ComposePollTweetLocators.TweetOutButton(driver).click();
+		
+	}
+}
