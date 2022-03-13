@@ -1,0 +1,35 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class ChangeFontThemeLocators {
+	
+	static WebElement element = null;
+	
+	public static WebElement MoreOptionsClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/div/div/div[2]/span"));
+		return element;		
+	}
+	
+	public static WebElement DisplayOptionClick(WebDriver driver) {
+		element = driver.findElement(By.cssSelector("a[href='/i/display']"));
+		return element;		
+	}
+	
+	public static WebElement SmallFontSizeClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div[5]/div"));
+		return element;		
+	}
+	
+	public static WebElement DefaultThemeClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[8]/div/div/div[1]/input"));
+		return element;		
+	}
+	
+	public static WebElement DoneButtonClick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[9]/div"));
+		return element;		
+	}		
+}
