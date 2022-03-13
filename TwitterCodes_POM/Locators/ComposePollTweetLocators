@@ -1,0 +1,39 @@
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class ComposePollTweetLocators {
+	
+	static WebElement element = null;
+	
+	public static WebElement CreateTweetButton(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span"));
+		return element;
+		}
+	public static WebElement ClickPollOption(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[1]/div[3]/div"));
+		return element;
+	}
+	
+	public static WebElement FirstPollChoiceEnter(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div/label/div/div[2]/div/input"));
+		return element;
+	}
+	
+	public static WebElement SecondPollChoiceEnter(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/label/div/div[2]/div/input"));
+		return element;
+	}
+	
+	public static WebElement TweetTextEnter(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div"));
+		return element;
+	}
+	
+	public static WebElement TweetOutButton(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"layers\"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]/div/span/span"));
+		return element;
+	}
+}
